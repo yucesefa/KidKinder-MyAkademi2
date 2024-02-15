@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+@Html.Action("PartialHead", "Default")
+<body>
+    @Html.Action("PartialNavbar", "Default")
+
+    @RenderBody()
+    
+    @Html.Action("PartialFooter", "Default")
+
+    @Html.Action("PartialScripts", "Default")
+</body>
+</html>
