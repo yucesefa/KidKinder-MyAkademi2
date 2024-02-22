@@ -3,29 +3,59 @@
     ViewBag.Title = "TeacherList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Öğretemen Listesi</h5>
+                        <span>Öğretmenlerle iligli işlemler</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table table-hover">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Görsel</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Branş</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.TeacherId</td>
+                                            <td><img src="@item.ImageUrl" style="width:150px" /></td>
+                                            <td>@item.NameSurname</td>
+                                            <td>@item.Branch.BranchName</td>
+                                            <td><a href="/Teacher/DeleteTeacher/@item.TeacherId" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Teacher/UpdateTeacher/@item.TeacherId" class="btn btn-success">Güncelle</a></td>
 
-<h2>TeacherList</h2>
-<table class="table table-hover">
-    <tr>
-        <th>#</th>
-        <th>Öğretmen Adı</th>
-        <th>Alanı</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.TeacherId</td>
-            <td>@item.NameSurname</td>
-            <td>@item.Title</td>
-            <td><a href=""class="btn btn-danger">Sil</a></td>
-            <td><a href=""class="btn btn-success">Güncelle</a></td>
-
-        </tr>
-    }
-
-</table>
-<br />
-<a href="" class="btn btn-primary">Yeni Öğretmen Ekle</a>
-
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Teacher/CreateTeacher/" class="btn btn-primary">Yeni Öğretmen Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

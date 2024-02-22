@@ -1,0 +1,35 @@
+﻿@model  KidKinder.Entities.Contact
+<div class="row">
+    <div class="col-lg-7 mb-5">
+        <div class="contact-form">
+            <div id="success"></div>
+            @using (Html.BeginForm("ContactProcessPartial", "Contact",FormMethod.Post))
+            {
+                <div class="control-group">
+                    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control", placeholder = "İsminiz", size = "50", required = "required" })
+                </div>
+                <br />
+                <div class="control-group">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email Adresiniz", size = "50", required = "required" })
+                </div>
+                <br />
+                <div class="control-group">
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu", size = "50", required = "required" })
+                </div>
+                <br />
+                <div class="control-group">
+                    @Html.TextAreaFor(x => x.Message,7,3, new { @class = "form-control", placeholder = "Mesaj", required = "required" })
+                </div>
+                <br />
+                <div>
+                    <button class="btn btn-primary py-2 px-4"
+                            type="submit"
+                            id="sendMessageButton">
+                        Mesaj Gönder
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+    @Html.Action("ContactAddressPartial", "Contact")
+</div>
