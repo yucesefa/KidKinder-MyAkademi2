@@ -1,4 +1,10 @@
-﻿﻿<div class="container-fluid py-5" id="bookaseat">
+﻿
+@{
+    ViewBag.Title = "BookASeat";
+    Layout = null;
+}
+
+﻿<div class="container-fluid py-5" id="bookaseat">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7 mb-5 mb-lg-0">
@@ -9,9 +15,10 @@
                 <p>
                     Eğitimin önemini biliyoruz ve çocuğunuzun başarılı bir geleceğe sahip olması için en iyi eğitimi almasını istiyorsunuz. Biz de buradayız! Okulumuz, öğrencilerimize benzersiz bir öğrenme deneyimi sunmak için tasarlanmıştır. Nitelikli öğretmenlerimiz, yenilikçi müfredatlarımız ve zengin ekstra aktivitelerimizle çocuğunuzun potansiyelini keşfetmesine ve gelişmesine yardımcı oluyoruz.
                 </p>
-                @Html.Action("PartialBookaSeatList")
+                @Html.Action("BookASeatList")
             </div>
-            @Html.Action("PartialBookaSeatProcess")
+            @Html.Action("BookASeatProcess")
         </div>
     </div>
 </div>
+

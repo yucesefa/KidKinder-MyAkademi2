@@ -1,4 +1,5 @@
-﻿
+﻿@using KidKinder.Entities
+@model List<Teacher>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -18,22 +19,22 @@
                                     <div class="col-sm-6 b-r-default p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-user text-c-purple f-24"></i>
+                                                <i class="fa fa-graduation-cap text-c-purple f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>10K</h5>
-                                                <p class="text-muted m-b-0">Visitors</p>
+                                                <h5>@ViewBag.DilEgitimCount</h5>
+                                                <p class="text-muted m-b-0">Dil Öğretmeni</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="fas fa-volume-down text-c-green f-24"></i>
+                                                <img src="https://cdn-icons-png.freepik.com/512/1436/1436664.png?uid=R138619018&ga=GA1.1.1030847296.1708429824&" width="40" height="40" />
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>100%</h5>
-                                                <p class="text-muted m-b-0">Volume</p>
+                                                <h5>@ViewBag.Teacher</h5>
+                                                <p class="text-muted m-b-0">Öğretmenlerimiz</p>
                                             </div>
                                         </div>
                                     </div>
@@ -42,22 +43,22 @@
                                     <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-file-alt text-c-red f-24"></i>
+                                                <img src="https://cdn-icons-png.flaticon.com/512/6577/6577251.png" width="40" height="40" />
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>2000+</h5>
-                                                <p class="text-muted m-b-0">Files</p>
+                                                <h5>@ViewBag.Branch</h5>
+                                                <p class="text-muted m-b-0">Branşlar</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 p-b-20 p-t-20">
                                         <div class="row align-items-center text-center">
                                             <div class="col-4 p-r-0">
-                                                <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                <img src="data:image/png;base64,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" width="40" height="40" />
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>120</h5>
-                                                <p class="text-muted m-b-0">Mails</p>
+                                                <h5>@ViewBag.ClassRoom</h5>
+                                                <p class="text-muted m-b-0">Sınıflar</p>
                                             </div>
                                         </div>
                                     </div>
@@ -65,6 +66,163 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-stat-card">
+                            <div class="card-block">
+                                <div class="row align-items-center b-b-default">
+                                    <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <img src="https://sm.mashable.com/mashable_tr/photo/default/turk-lirasi-tl-isareti_vdyx.jpg" width="50" height="40" />
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.AvgPrice</h5>
+                                                <p class="text-muted m-b-0">Ortalama Fiyat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <img src="https://cdn-icons-png.freepik.com/512/2720/2720641.png" width="40" height="40" />
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.Service</h5>
+                                                <p class="text-muted m-b-0">Hizmetler</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT96cBORRLH_jjwB0nL6H415qzni-oMfnxRSA&usqp=CAU" width="40" height="40" />
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.Contact</h5>
+                                                <p class="text-muted m-b-0">Mesajlar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 p-b-20 p-t-20">
+                                        <div class="row align-items-center text-center">
+                                            <div class="col-4 p-r-0">
+                                                <img src="https://static.thenounproject.com/png/4777262-200.png" width="40" height="40" />
+                                            </div>
+                                            <div class="col-8 p-l-0">
+                                                <h5>@ViewBag.BookASeat</h5>
+                                                <p class="text-muted m-b-0">Kayıt Sayısı</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-clr-stat-card text-white green ">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-green">
+                                        <i class="fas fa-star mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.Testimonial</h5>
+                                        <p class="m-b-0">Değerlendirmeler</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mat-clr-stat-card text-white blue">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-blue">
+                                        <i class="fas fa-trophy mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.Subscribe</h5>
+                                        <p class="m-b-0">Aboneler</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h5>Öğretmenlerimiz</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover m-b-0 without-header">
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-inline-block align-middle">
+                                                            <img src="@item.ImageUrl" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                            <div class="d-inline-block">
+                                                                <h6>@item.NameSurname</h6>
+                                                                <p class="text-muted m-b-0">@item.Branch.BranchName</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12">
+                        <div class="row">
+                            <!-- sale card start -->
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h4 class="m-t-15 m-b-15"><img src="https://freepngimg.com/thumb/instagram/118541-logo-instagram-png-download-free.png" width="100" height="100"  />Instagram</h4>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h4 class="m-t-15 m-b-15"><img src="~/images/Twitter-X-Icon-PNG.png" width="100" height="100" style="margin-right:10px" />Twitter</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h4 class="m-t-15 m-b-15"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" width="100" height="100" style="margin-right:10px" />LinkedIn</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                       
+                                        <h4 class="m-t-15 m-b-15"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="100" height="100" style="margin-right:10px" />Github</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- sale card end -->
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

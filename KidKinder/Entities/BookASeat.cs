@@ -10,6 +10,10 @@ namespace KidKinder.Entities
         public int BookASeatId { get; set; }
         public string NameSurname { get; set; }
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public int ClassRoomId { get; set; }
+        public virtual ClassRoom ClassRoom { get; set; }
+
 
     }
 }

@@ -128,17 +128,30 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AboutListController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\BookASeatAdminController.cs" />
+    <Compile Include="Controllers\BookASeatController.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ClassRoomController.cs" />
+    <Compile Include="Controllers\ContactAdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryAdminController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Address.cs" />
@@ -152,7 +165,9 @@
     <Compile Include="Entities\Gallery.cs" />
     <Compile Include="Entities\MailSubscribe.cs" />
     <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\Parent.cs" />
     <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entities\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +201,50 @@
     <Compile Include="Migrations\202402221137417_mig8.designer.cs">
       <DependentUpon>202402221137417_mig8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402221742538_mig9.cs" />
+    <Compile Include="Migrations\202402221742538_mig9.designer.cs">
+      <DependentUpon>202402221742538_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221800272_mig10.cs" />
+    <Compile Include="Migrations\202402221800272_mig10.designer.cs">
+      <DependentUpon>202402221800272_mig10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221816385_mig11.cs" />
+    <Compile Include="Migrations\202402221816385_mig11.designer.cs">
+      <DependentUpon>202402221816385_mig11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221858486_mig12.cs" />
+    <Compile Include="Migrations\202402221858486_mig12.designer.cs">
+      <DependentUpon>202402221858486_mig12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221919527_mig13.cs" />
+    <Compile Include="Migrations\202402221919527_mig13.designer.cs">
+      <DependentUpon>202402221919527_mig13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221926011_mig14.cs" />
+    <Compile Include="Migrations\202402221926011_mig14.designer.cs">
+      <DependentUpon>202402221926011_mig14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402281837098_mig15.cs" />
+    <Compile Include="Migrations\202402281837098_mig15.designer.cs">
+      <DependentUpon>202402281837098_mig15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402281840198_mig16.cs" />
+    <Compile Include="Migrations\202402281840198_mig16.designer.cs">
+      <DependentUpon>202402281840198_mig16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402281940236_mig17.cs" />
+    <Compile Include="Migrations\202402281940236_mig17.designer.cs">
+      <DependentUpon>202402281940236_mig17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402290700595_mig18.cs" />
+    <Compile Include="Migrations\202402290700595_mig18.designer.cs">
+      <DependentUpon>202402290700595_mig18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403010741073_mig19.cs" />
+    <Compile Include="Migrations\202403010741073_mig19.designer.cs">
+      <DependentUpon>202403010741073_mig19.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Models\TeacherViewModel.cs" />
@@ -211,8 +270,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\IMG_20221116_143920_195.jpg" />
+    <Content Include="images\pngegg.png" />
     <Content Include="images\teacher1.jpg" />
     <Content Include="images\teacher2.jpg" />
+    <Content Include="images\Twitter-X-Icon-PNG.png" />
+    <Content Include="images\—Pngtree—kids logo_4135797.png" />
     <Content Include="Templates\colorlib-error-404-10\css\style.css" />
     <Content Include="Templates\colorlib-error-404-10\img\bg.jpg" />
     <Content Include="Templates\colorlib-error-404-10\index.html" />
@@ -637,7 +700,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
-    <Content Include="Views\Default\PartialBookASeat.cshtml" />
     <Content Include="Views\Default\PartialClassRooms.cshtml" />
     <Content Include="Views\Default\PartialFeature.cshtml" />
     <Content Include="Views\Default\PartialFooter.cshtml" />
@@ -721,8 +783,6 @@
     <Content Include="Views\ClassRoom\CreateClassRoom.cshtml" />
     <Content Include="Views\ClassRoom\UpdateClassRoom.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\Default\PartialBookASeatList.cshtml" />
-    <Content Include="Views\Default\PartialBookASeatProcess.cshtml" />
     <Content Include="Views\Contact\ContactProcessPartial.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
@@ -802,6 +862,42 @@
     <Content Include="Templates\Login_v1\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\Login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Login\CreateAccount.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Branch\Index.cshtml" />
+    <Content Include="Views\Branch\CreateBranch.cshtml" />
+    <Content Include="Views\Branch\UpdateBranch.cshtml" />
+    <Content Include="Views\BookASeat\BookASeat.cshtml" />
+    <Content Include="Views\BookASeat\BookASeatList.cshtml" />
+    <Content Include="Views\BookASeat\BookASeatProcess.cshtml" />
+    <Content Include="Views\AboutList\Index.cshtml" />
+    <Content Include="Views\AboutList\CreateAboutList.cshtml" />
+    <Content Include="Views\AboutList\UpdateAboutList.cshtml" />
+    <Content Include="Views\BookASeatAdmin\Index.cshtml" />
+    <Content Include="Views\BookASeatAdmin\CreateBookASeatAdmin.cshtml" />
+    <Content Include="Views\BookASeatAdmin\UpdateBookASeatAdmin.cshtml" />
+    <Content Include="Views\ContactAdmin\Index.cshtml" />
+    <Content Include="Views\ContactAdmin\MessageDetail.cshtml" />
+    <Content Include="Views\GalleryAdmin\Index.cshtml" />
+    <Content Include="Views\GalleryAdmin\CreateGalleryAdmin.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Default\PartialSubscribe.cshtml" />
+    <Content Include="Views\Subscribe\Index.cshtml" />
+    <Content Include="Views\Subscribe\CreateSubscribe.cshtml" />
+    <Content Include="Views\Subscribe\UpdateSubscribe.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Parent\Index.cshtml" />
+    <Content Include="Views\Parent\CreateParent.cshtml" />
+    <Content Include="Views\Parent\UpdateParent.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\CreateStudent.cshtml" />
+    <Content Include="Views\Student\UpdateStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -856,6 +952,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402221137417_mig8.resx">
       <DependentUpon>202402221137417_mig8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221742538_mig9.resx">
+      <DependentUpon>202402221742538_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221800272_mig10.resx">
+      <DependentUpon>202402221800272_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221816385_mig11.resx">
+      <DependentUpon>202402221816385_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221858486_mig12.resx">
+      <DependentUpon>202402221858486_mig12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221919527_mig13.resx">
+      <DependentUpon>202402221919527_mig13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221926011_mig14.resx">
+      <DependentUpon>202402221926011_mig14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402281837098_mig15.resx">
+      <DependentUpon>202402281837098_mig15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402281840198_mig16.resx">
+      <DependentUpon>202402281840198_mig16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402281940236_mig17.resx">
+      <DependentUpon>202402281940236_mig17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402290700595_mig18.resx">
+      <DependentUpon>202402290700595_mig18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403010741073_mig19.resx">
+      <DependentUpon>202403010741073_mig19.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

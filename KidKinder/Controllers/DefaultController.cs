@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,22 +46,8 @@ namespace KidKinder.Controllers
         }
         public PartialViewResult PartialClassRooms()
         {
-            var valeus = context.ClassRooms.ToList();
+            var valeus = context.ClassRooms.OrderByDescending(x=>x.ClassRoomId).Take(3).ToList();
             return PartialView(valeus);
-        }
-        public PartialViewResult PartialBookASeat()
-        {
-            return PartialView();
-        }
-        public PartialViewResult PartialBookASeatList()
-        {
-            return PartialView();
-        }
-        public PartialViewResult PartialBookASeatProcess()
-        {
-            ViewBag.Classroom = new SelectList(context.ClassRooms.ToList(), "ClassRoomId", "Title");
-            var classroom = context.ClassRooms.ToList();
-            return PartialView();
         }
         public PartialViewResult PartialTeacher()
         {
@@ -77,6 +64,22 @@ namespace KidKinder.Controllers
             ViewBag.phone = context.Communications.Select(x => x.Phone).FirstOrDefault();
             ViewBag.address = context.Communications.Select(x => x.Address).FirstOrDefault();
             ViewBag.email = context.Communications.Select(x => x.Email).FirstOrDefault();
+            return PartialView();
+        }
+        [HttpGet]
+        public PartialViewResult PartialSubscribe()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult PartialSubscribe(MailSubscribe mailSubscribe)
+        {
+            if(ModelState.IsValid)
+            {
+                context.MailSubscribes.Add(mailSubscribe);
+                context.SaveChanges();
+            }
             return PartialView();
         }
         public PartialViewResult PartialScripts()

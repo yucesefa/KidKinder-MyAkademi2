@@ -1,0 +1,65 @@
+﻿@model List<KidKinder.Entities.Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Referanslar</h5>
+                        <span>Referans ile iligli işlemler</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table table-hover">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>İsim Soyisim</th>
+                                        <th>Başlık</th>
+                                        <th>Yorum</th>
+                                        <th>Görsel</th>
+                                        <th>Sil</th>
+                                        <th>Düzenle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.TestimonialId</td>
+                                            <td>@item.NameSurname</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Comment</td>
+                                            <td><img src="@item.ImageUrl" width="100" height="100" /></td>
+                                            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-success">Düzenle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Testimonial/CreateTestimonial/" class="btn btn-primary">Yeni Referans Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
